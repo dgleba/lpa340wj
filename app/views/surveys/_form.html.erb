@@ -1,0 +1,23 @@
+  <%= form_for @survey do |f| %>
+    <% if @survey.errors.any? %>
+      <% @survey.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    <% end %>
+
+      <h5>Add title</h5>
+      <%= f.text_field :title, autofocus: true %><br />
+    </div>
+
+    <h5 class="add-question">Add Questions</h5>
+
+    <div id="questions">
+      <%= f.fields_for :questions do |question| %>
+        <% render 'question_fields', f: question %>
+      <% end %>
+        <%= link_to_add_association 'add question', f, :questions %>
+    </div>
+
+    <%= f.submit %>
+  <% end %>
+  <p><%= link_to "Cancel", surveys_path %></p>
