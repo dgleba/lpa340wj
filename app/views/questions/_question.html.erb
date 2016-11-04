@@ -1,0 +1,15 @@
+<div class="item">
+  <div class="well">
+    <div class="card card-block">
+      <h6 class="card-title"><%= question.title %></h6>
+
+      <div id="answer">
+        <small>Answer</small>
+        <% question.answers.each do |answer| %>
+        <% end %>
+      </div>
+
+      <%= text_field_tag "answers[#{question.id}]" %>
+    </div>
+  </div>
+</div>
