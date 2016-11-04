@@ -7,6 +7,6 @@ class AnswersController < ApplicationController
         question.answers.create({body: answer, user: current_user}) if question
       end
     end
-    redirect_to survey_path(survey)
+    redirect_to surveys_path
   end
 end
