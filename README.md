@@ -17,20 +17,6 @@ Cocoon - As I began building out the schema, I realized that surveys would need 
 After looking into cocoon, I learned that this was a good way to leverage jquery to build dynamic forms into a rails app.  
 
 rails_admin - I was tasked with finding a simple solution for monitoring a users survey answer.
-It is a pretty powerful gem that gives you a lot of functionality.  
+It is a pretty powerful gem that gives you a lot of functionality.  Create an admin account and view user behavior from there.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+to login with an admin account. Please use the following.
