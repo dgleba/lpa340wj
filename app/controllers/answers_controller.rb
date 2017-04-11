@@ -10,3 +10,6 @@ class AnswersController < ApplicationController
     redirect_to surveys_path
   end
 end
+
+#params
+# { answers: { 1: "this looks good" } }

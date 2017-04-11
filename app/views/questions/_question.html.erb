@@ -9,7 +9,14 @@
         <% end %>
       </div>
 
-      <%= text_field_tag "answers[#{question.id}]" %>
+      <% if question.qtype == "short_answer" %>
+        <%= text_field_tag "answers[#{question.id}]" %>
+      <% elsif question.qtype == "multiple_choice" %>
+        <%= radio_button_tag "answers[#{question.id}]", "Yes" %>
+        <%= label_tag :yes_label, "Yes" %>
+        <%= radio_button_tag "answers[#{question.id}]", "No" %>
+        <%= label_tag :no_label, "No" %>
+      <% end %>
     </div>
   </div>
 </div>
