@@ -5,7 +5,7 @@
 
       <div id="answer">
         <small>Answer</small>
-        <% question.answers.each do |answer| %>
+        <% question.answers.each do |answr| %>
         <% end %>
       </div>
 
@@ -15,11 +15,10 @@
         <%= radio_button_tag "answers[#{question.id}]", "Yes" %>
         <%= label_tag :yes_label, "Yes" %>
         <%= radio_button_tag "answers[#{question.id}]", "No" %>
-        <%= label_tag :no_label, "No" %>
-        <%= "answers[#{question.id}].label :issue_description", class: "col-sm-2 control-label" %>
-        <div class="col-sm-10">
-        <%%= answers.text :issue_description, class: "form-control" %>
 
+        <div class="col-sm-10">
+        <%= text_field_tag "answers[#{question.id}]" :issue_description, class: "form-control" %>
+        </div>
       <% end %>
     </div>
   </div>
