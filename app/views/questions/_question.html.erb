@@ -9,7 +9,7 @@
         <% end %>
       </div>
 
-      <% if question.qtype == "short_answer" || question.qtype === "select_part_number" %>
+      <% if question.qtype == "short_answer" || question.qtype == "select_part_number" %>
         <%= text_field_tag "answers[#{question.id}]" %>
       <% elsif question.qtype == "multiple_choice" %>
         <%= radio_button_tag "answers[#{question.id}][yes_no]", "Yes" %>
@@ -23,11 +23,7 @@
         <div>
           Action Taken: <%= text_field_tag "answers[#{question.id}][action_taken]"  %>
         </div>
-        <!--
-          <% elsif question.qtype == "select_part_number" %>
-            <%= options_from_collection_for_select(PartNumber.all, :name, :name) %>
-        -->
-      <% end %>
+     <% end %>
     </div>
   </div>
 </div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170417213318) do
+ActiveRecord::Schema.define(version: 20170428014115) do
 
   create_table "answers", force: :cascade do |t|
     t.text     "body"
@@ -24,12 +24,31 @@ ActiveRecord::Schema.define(version: 20170417213318) do
     t.index ["user_id"], name: "index_answers_on_user_id"
   end
 
+  create_table "part_numbers", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "sort"
+    t.integer  "active_status"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "process_steps", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "sort"
+    t.integer  "active_status"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
   create_table "questions", force: :cascade do |t|
     t.string   "title"
     t.integer  "survey_id"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-    t.integer  "qtype",      default: 0
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.integer  "qtype",                default: 0
+    t.text     "question_note"
+    t.text     "question_whatlookfor"
+    t.text     "question_if_no"
   end
 
   create_table "surveys", force: :cascade do |t|
